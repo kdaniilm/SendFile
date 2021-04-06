@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SendFile"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="WhiteSmoke" MinWidth="250px" MinHeight="100px">
     <Grid>
-        
+        <Button Name="LoadBtn" Margin="50 100 50 250" FontSize="40px" Background="SkyBlue" Click="LoadClick">Load</Button>
+        <Button Name="SendBtn" Margin="50 250 50 100" FontSize="40px" Background="SkyBlue" Click="SendClick">Send</Button>
     </Grid>
 </Window>
