@@ -8,5 +8,8 @@ namespace BLL.Service.Interfaces
 {
     interface ISendFile
     {
+        byte[] GetFile(string path);
+
+        bool SendFileToServer();
     }
 }

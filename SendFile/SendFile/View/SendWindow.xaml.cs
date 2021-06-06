@@ -1,16 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BLL.Service;
+using Microsoft.Win32;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace SendFile.View
 {
@@ -22,6 +12,27 @@ namespace SendFile.View
         public SendWindow()
         {
             InitializeComponent();
+        }
+
+        private void SelectFileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var fileDialog = new OpenFileDialog();
+
+            fileDialog.InitialDirectory = "c:\\";
+            fileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            fileDialog.FilterIndex = 2;
+            fileDialog.RestoreDirectory = true;
+
+            fileDialog.ShowDialog();
+
+            FilePathTb.Text = fileDialog.FileName;
+        }
+
+        private void SendBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var sendFileBLL = new SendFileBLL();
+
+            sendFileBLL.GetFile(FilePathTb.Text);
         }
     }
 }

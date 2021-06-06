@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SendFile.View"
         mc:Ignorable="d"
-        Title="SendWindow" Height="450" Width="800">
+        Title="SendWindow" Height="450" Width="800" Background="WhiteSmoke" MinWidth="250px" MinHeight="100px">
     <Grid>
-        
+        <Label Margin="50 230 650 150" FontSize="20px">File path:</Label>
+        <TextBox Name="FilePathTb" FontSize="20px" Margin="150 230 200 150"></TextBox>
+        <Button Name="SelectFileBtn" Margin="610 230 50 150" FontSize="20px" Background="LightGray" Click="SelectFileBtn_Click">Browse...</Button>
+        <Button Name="SendBtn" Margin="50 300 50 50" FontSize="40px" Background="SkyBlue" Click="SendBtn_Click">Send</Button>
     </Grid>
 </Window>

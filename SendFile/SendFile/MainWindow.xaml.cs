@@ -21,7 +21,9 @@ namespace SendFile
         }
         private void SendClick(object sender, RoutedEventArgs e)
         {
-
+            var sendWindow = new SendWindow();
+            this.Close();
+            sendWindow.Show();
         }
     }
 }
